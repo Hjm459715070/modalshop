@@ -1,0 +1,55 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>登录页面</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div style="text-align:center">
+        <img  
+        style="width:100px;height:100px;border-radius:50px"
+        src="assets/img/1.jpg"/>
+    </div>
+  <!--表单是靠列表进行组织管理的-->
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="uname" type="text" placeholder="用户名">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="upwd" type='password' placeholder="密码">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!--在一行中的左边显示免费注册，右边显示忘记密码-->
+    <ion-grid>
+      <ion-row>
+        <ion-col pull-1>
+          <button color="dark" ion-button clear>
+            免费注册
+          </button>
+        </ion-col>
+        <ion-col push-2>
+          <button color="dark" ion-button clear>
+            忘记密码
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button ion-button 
+    (click)="doLogin()"
+    color='danger' block round>
+      登录
+    </button>
+</ion-content>

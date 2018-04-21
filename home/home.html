@@ -1,0 +1,39 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>home</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-content padding>
+  <ion-tabs>
+    <ion-tab 
+    [root]="tabIndex"
+    tabsHideOnSubPages="true"
+    tabIcon="home"
+    tabTitle="首页">
+    </ion-tab>
+    <ion-tab 
+    tabIcon="cart"
+    [root]="tabCart"
+    tabTitle="购物车">
+    </ion-tab>
+    <ion-tab 
+    tabIcon="person"
+    [root]="tabPerson"
+    tabTitle="个人中心">
+    </ion-tab>
+    <ion-tab 
+    tabIcon="settings"
+    tabTitle="设置">
+    </ion-tab>
+  </ion-tabs>
+</ion-content>

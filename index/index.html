@@ -1,0 +1,75 @@
+<!--
+  Generated template for the IndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2>
+        <button ion-button clear color="dark">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <ion-searchbar></ion-searchbar>
+      </ion-col>
+      <ion-col col-2>
+         <button ion-button clear color="dark">
+          <ion-icon name="chatboxes"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-slides 
+    *ngIf="carouselItems.length>0"
+    autoplay=1000
+    speed=1000
+    loop=true
+    pager=true
+    style="height:100px">
+      <ion-slide
+      *ngFor="let carousel of carouselItems">
+        <img [src]="'assets/'+carousel.img"/>
+      </ion-slide>
+    </ion-slides>
+    <h2>新货上市</h2>
+    <!--将新货上市展示横向滚动的区域-->
+    <ion-scroll scrollX
+    style="height:220px;white-space:nowrap"
+    *ngIf="newArrivalItems.length>0">
+       <ion-card 
+       style="display:inline-block"
+       *ngFor="let product of newArrivalItems">
+         <img style="height:150px" [src]="'assets/'+product.pic"/>
+         <ion-card-content>
+          {{product.title}}
+         </ion-card-content>
+       </ion-card>
+    </ion-scroll>
+
+    <h2>推荐商品</h2>
+    <ion-list>
+      <ion-item 
+       [navPush]="detail"
+       [navParams]="{pid:product.pid}"
+       text-wrap *ngFor="let product of recommendedItems">
+        <ion-thumbnail item-start>
+          <img [src]="'assets/'+product.pic"/>
+        </ion-thumbnail>
+        <h2>{{product.title}}</h2>
+        <p>{{product.details}}</p>
+        <button ion-button clear item-end>
+          <ion-icon name="cart">
+          </ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
